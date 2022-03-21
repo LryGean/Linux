@@ -1,0 +1,13 @@
+（1）前往/dev/shm这个内存仿真的目录来执行后续的命令：cd /dev/shm
+（2）创建名为backup的目录，等待备份数据： 
+mkdir backup
+ll
+（3）进入backup目录：cd backup
+                      pwd
+（4）将/etc完整地复制过来：cp -r /etc .
+注意：由于权限问题，有些文件无法复制，没关系，看下面。
+（5）再次复制文件，同时将错误信息传送到垃圾桶，不显示在屏幕上
+cp -r /etc . 2> /dev/null
+（6）查看/etc和./etc的详细信息
+ll -d /etc ./etc  （列出他们自己的目录，不是内容）
+（7）删除backup目录： rm -rf backup（先演示不加f，会有询问，ctrl+c中断后再演示加f的）

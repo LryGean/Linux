@@ -1,0 +1,29 @@
+1.  file的所有者是yangn，所属组是exam4，权限值为644
+     普通文件，linux为其他用户，有读权限
+2. useradd -G examgroup exam1
+    echo ItIsExam | passwd --stdin exam1
+    其他用户同上
+    useradd exam4
+    userdel -r exam5
+    (修改扩展组)usermod -G linux exam1
+    （增加扩展组）gpasswd -a exam1 linux
+3. (1)
+    cp /etc/securetty /home/exam4
+    chown exam4:exam4 /home/exam4/securetty
+    chmod u=rwx /home/exam4/securetty
+    (2)
+     touch ***
+     chown exam1:examgroup ***
+     chmod 740 ****
+     (3)
+     mkdir ***
+     chgrp  examgroup ***
+      chmod  770 ****
+      (4) 
+      cp /bin/more /usr/local/bin/mymore
+      chgrp examgroup /usr/***
+      chmod 750*****
+      利用用户验证
+     （exam4不属于examgroup，执行mymore 某个文件，显示拒绝）
+      （exam1属于examgroup，执行mymore 某个文件）
+       
